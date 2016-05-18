@@ -38,12 +38,15 @@ public class MainWindow extends Application {
     public void handleCoding(KeyEvent event){
         switch (event.getCode()){
             case BACK_SPACE:
-                area.setText(null);
+                area.clear();
                 area.setText(codeText.getPreviousText());
+                area.appendText("");
                 break;
             default:
-                area.setText(null);
+                area.clear();
                 area.setText(codeText.getNextText());
+                area.appendText("");
         }
+        event.consume();
     }
 }
